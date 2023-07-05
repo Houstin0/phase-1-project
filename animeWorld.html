@@ -4,23 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anime World</title>
-    <link rel="stylesheet" href="animeWorld.css">
+    <link rel="stylesheet" href="animeworld.css">
 </head>
 <body>
     <div id="header">
-        <h1>Anime World</h1>
-        
-        <div id="navBar"> 
-        <form >
-            <input type="text" id="searchBar">
-            <button>Search</button>
-        </form>
-    </div>
+        <div class="logo">
+            <a href="#">Anime World</a>
+        </div>
+        <div class="Search">
+            <form>
+                <input type="text" id="searchBar">
+                <button>Search</button>
+            </form>
+        </div>  
+       <div class="navBar">
+        <nav>
+            <a href="">Home</a>
+            <a href="">Animes</a>
+            <a href="">Trending</a>
+            <a href="">About</a>
+
+        </nav>
+       </div>
        
     </div>
+    <div id="showing">
     <div id="animeContainer"></div>
     <ul id="animeList"></ul>
-
+    </div>
 
     <div id="displayCurrent"></div> 
     <div id="top"></div>
