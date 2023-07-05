@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     })
   })
 
-//displayAnime(animes)
+
 
 
   
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded",()=>{
         console.log(data);
      const animes=data.data
        if(animes.length>0){
-       const displayResultContainer=document.getElementById("displayCurrent")
+       const displayResultContainer=document.getElementById("displaySearchResult")
        displayResultContainer.innerHTML=" "
 
        animes.forEach(anime=>{
@@ -96,13 +96,12 @@ document.addEventListener("DOMContentLoaded",()=>{
 
  //function to display searched anime results
 function displayAnimeResult(anime){
-    const displayResultContainer=document.getElementById("displayCurrent")
+    const displayResultContainer=document.getElementById("displaySearchResult")
     //use to clear the previous content .......
      displayResultContainer.innerHTML=" "
   
-     //iterate through the data and create a card for each with anime details
       const animeElement=document.createElement("div")
-      animeElement.classList.add("animeCard")
+      animeElement.classList.add("animeCardResult")
     
       //add information to the animeCard
       const imageElement=document.createElement("img")
@@ -111,20 +110,35 @@ function displayAnimeResult(anime){
       animeElement.appendChild(imageElement)
     
       const titleElement=document.createElement('h3')
-      titleElement.textContent=anime.title
+      titleElement.textContent=anime.title_english
       animeElement.appendChild(titleElement)
+
+      const descriptionElement=document.createElement('p')
+      descriptionElement.textContent=anime.synopsis
+      animeElement.appendChild(descriptionElement) 
     
       const episodesElement=document.createElement('p')
       episodesElement.textContent=`Episodes: ${anime.episodes}` 
       animeElement.appendChild(episodesElement)
+
+      const durationElement=document.createElement("p")
+      durationElement.textContent=`Duration: ${anime.duration}`
+      animeElement.appendChild(durationElement)
+
+      const statusElement=document.createElement("p")
+      statusElement.textContent=`Status: ${anime.status}`
+      animeElement.appendChild(statusElement)
+
+      const airedElement=document.createElement("p")
+      airedElement.textContent=`Aired from: ${anime.aired.string}`
+      animeElement.appendChild(airedElement)
+      
+      const ratedElement=document.createElement("p")
+      ratedElement.textContent=`Rated:${anime.rating}`
+      animeElement.appendChild(ratedElement)
+     
     
-      const ratingElement=document.createElement('p')
-      ratingElement.textContent=`rating: ${anime.rating}`
-      animeElement.appendChild(ratingElement)
-    
-      const descriptionElement=document.createElement('p')
-      descriptionElement.textContent=anime.synopsis
-      animeElement.appendChild(descriptionElement) 
+
     
       //add the animeCard to the container
       displayResultContainer.appendChild(animeElement)
