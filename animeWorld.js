@@ -40,15 +40,86 @@ document.addEventListener("DOMContentLoaded",()=>{
       animeElement.appendChild(nextBtn)
   
       cardContainer.appendChild(animeElement)
-  
-  
   }
   
-
-
- })
+})
 
 .catch((error) => {
     console.error("Error:", error);
   });
+
+
+function displayAnime(anime){
+    const displaycontainer=document.getElementById("displayCurrent")
+    //use to clear the previous content .......
+     displaycontainer.innerHTML=" "
+  
+     //iterate through the data and create a card for each with anime details
+    anime.forEach(anime=>{
+      const animeElement=document.createElement("div")
+      animeElement.classList.add("animeCard")
+    
+      //add information to the animeCard
+      const imageElement=document.createElement("img")
+      imageElement.src=anime.images.jpg.image_url
+      imageElement.alt="Anime pic"
+      animeElement.appendChild(imageElement)
+    
+      const titleElement=document.createElement('h3')
+      titleElement.textContent=anime.title
+      animeElement.appendChild(titleElement)
+    
+      const episodesElement=document.createElement('p')
+      episodesElement.textContent=`Episodes: ${anime.episodes}` 
+      animeElement.appendChild(episodesElement)
+    
+      const ratingElement=document.createElement('p')
+      ratingElement.textContent=`rating: ${anime.rating}`
+      animeElement.appendChild(ratingElement)
+    
+      const descriptionElement=document.createElement('p')
+      descriptionElement.textContent=anime.synopsis
+      animeElement.appendChild(descriptionElement) 
+    
+      //add the animeCard to the container
+      displaycontainer.appendChild(animeElement)
+    })
+   }
+  
+   function displayAnime(anime){
+      const displaycontainer=document.getElementById("displayCurrent")
+      //use to clear the previous content .......
+       displaycontainer.innerHTML=" "
+    
+       //iterate through the data and create a card for each with anime details
+      anime.forEach(anime=>{
+        const animeElement=document.createElement("div")
+        animeElement.classList.add("animeCard")
+      
+        //add information to the animeCard
+        const imageElement=document.createElement("img")
+        imageElement.src=anime.images.jpg.image_url
+        imageElement.alt="Anime pic"
+        animeElement.appendChild(imageElement)
+      
+        const titleElement=document.createElement('h3')
+        titleElement.textContent=anime.title
+        animeElement.appendChild(titleElement)
+      
+        const episodesElement=document.createElement('p')
+        episodesElement.textContent=`Episodes: ${anime.episodes}` 
+        animeElement.appendChild(episodesElement)
+      
+        const ratingElement=document.createElement('p')
+        ratingElement.textContent=`rating: ${anime.rating}`
+        animeElement.appendChild(ratingElement)
+      
+        const descriptionElement=document.createElement('p')
+        descriptionElement.textContent=anime.synopsis
+        animeElement.appendChild(descriptionElement) 
+      
+        //add the animeCard to the container
+        displaycontainer.appendChild(animeElement)
+      })
+    }
 })
