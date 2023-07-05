@@ -2,13 +2,14 @@
     display: flex;
    background-color: gold; 
    gap: 400px;
+   padding: 10px;
 }
 .Search{
     border: 1px solid blue;
 }
 #showing{
     display: flex;
-    gap: 600px;
+    /*gap: 600px;*/
     padding: 1px;
     margin-top: 20px;
     border: 2px solid gold;
@@ -17,6 +18,8 @@
 
 #animeContainer{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     
 }
 .animeCard{
