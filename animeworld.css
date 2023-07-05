@@ -1,5 +1,9 @@
 body{
     background-color: black;
+   
+}
+h3{
+    text-align: center;
 }
 #header {
     display: flex;
@@ -41,7 +45,7 @@ padding-right: 20px;
 #displaySearchResult{
     background-image: url(./image/AAAAAAAAAwallpaperflare.com_wallpaper.jpg);
     background-size: cover;
-    
+    margin: 10px;
 }
 .animeCardResult{
     padding-right: 600px;

@@ -15,12 +15,7 @@ document.addEventListener("DOMContentLoaded",()=>{
       displayCard(anime)
     })
   })
-
-
-
-
-  
-})
+  })
 
 .catch((error) => {
     console.error("Error:", error);
