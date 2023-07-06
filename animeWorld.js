@@ -49,7 +49,7 @@ function displayAnimeResult(anime){
     const infoElement=document.createElement("div")
     infoElement.classList.add("infoCard")
 //add card elements
-    const titleElement=document.createElement('h3')
+    const titleElement=document.createElement('h2')
     titleElement.textContent=anime.title_english
     infoElement.appendChild(titleElement)
     const statusElement=document.createElement("p")
@@ -130,7 +130,7 @@ function displayAnimeResult(anime){
       imageElement.src=anime.images.jpg.image_url
       imageElement.alt="Anime pic"
       animeElement.appendChild(imageElement)
-      const titleElement=document.createElement('h3')
+      const titleElement=document.createElement('h2')
       titleElement.textContent=anime.title
       animeElement.appendChild(titleElement)
       const statusElement=document.createElement("p")

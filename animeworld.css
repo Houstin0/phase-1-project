@@ -55,6 +55,7 @@ a{
     background-size: cover;
     margin: 10px;
     border-radius: 20px;
+    color: white;
 }
 .animeCardResult{
     display: flex;
@@ -77,4 +78,22 @@ a{
     height: 30px;
     width: 500px;
     margin-top: 10px;
+}
+.infoCard{
+    padding-right: 600px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-top: 2px;
+}
+footer{
+    background-color: royalblue;
+}
+#socials {
+    padding-left: 30px;
+}
+#socials img{
+    width: 20px;
+}
+footer{
+    text-align: center;
 }
