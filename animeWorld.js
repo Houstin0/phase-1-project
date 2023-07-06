@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded",()=>{
-
 //event listener for search button
 const searchButton=document.getElementById("searchBtn")
 searchButton.addEventListener('click',(e)=>{
@@ -16,12 +15,10 @@ function fetchAnime(searchValue) {
   })
   .then(response => response.json())
   .then(data=>{
-      console.log(data);
    const animes=data.data
      if(animes.length>0){
      const displayResultContainer=document.getElementById("displaySearchResult")
-     displayResultContainer.innerHTML=" "
-
+     displayResultContainer.innerHTML=" "// clear previous content
      animes.forEach(anime=>{
       const animeElement=displayAnimeResult(anime)
       displayResultContainer.appendChild(animeElement)
@@ -33,58 +30,61 @@ function fetchAnime(searchValue) {
   .catch(error=>{
       console.log("Error:",error);
   })
- }
-
+}
 //function to display searched anime results
 function displayAnimeResult(anime){
   const displayResultContainer=document.getElementById("displaySearchResult")
-  //use to clear the previous content .......
-   displayResultContainer.innerHTML=" "
-
+  displayResultContainer.innerHTML=" "//clear the previous content
+  //create anime card
     const animeElement=document.createElement("div")
     animeElement.classList.add("animeCardResult")
-  
-    //add information to the animeCard
+  //add information to the animeCard
     const imageElement=document.createElement("img")
     imageElement.src=anime.images.jpg.image_url
     imageElement.alt="Anime pic"
     animeElement.appendChild(imageElement)
   
+    const description=document.createElement('p')
+    description.textContent=`Description: ${anime.synopsis}`
+    animeElement.appendChild(description) 
+
+    const infoElement=document.createElement("div")
+    infoElement.classList.add("infoCard")
+    
     const titleElement=document.createElement('h3')
     titleElement.textContent=anime.title_english
-    animeElement.appendChild(titleElement)
+    infoElement.appendChild(titleElement)
 
-    const descriptionElement=document.createElement('p')
-    descriptionElement.textContent=anime.synopsis
-    animeElement.appendChild(descriptionElement) 
-  
     const episodesElement=document.createElement('p')
     episodesElement.textContent=`Episodes: ${anime.episodes}` 
-    animeElement.appendChild(episodesElement)
-
-    const durationElement=document.createElement("p")
-    durationElement.textContent=`Duration: ${anime.duration}`
-    animeElement.appendChild(durationElement)
+    infoElement.appendChild(episodesElement)
 
     const statusElement=document.createElement("p")
     statusElement.textContent=`Status: ${anime.status}`
-    animeElement.appendChild(statusElement)
+    infoElement.appendChild(statusElement)
+  
+
+
+
+  
+    
+    const durationElement=document.createElement("p")
+    durationElement.textContent=`Duration: ${anime.duration}`
+    infoElement.appendChild(durationElement)
+
+
 
     const airedElement=document.createElement("p")
     airedElement.textContent=`Aired from: ${anime.aired.string}`
-    animeElement.appendChild(airedElement)
+    infoElement.appendChild(airedElement)
     
     const ratedElement=document.createElement("p")
     ratedElement.textContent=`Rated:${anime.rating}`
-    animeElement.appendChild(ratedElement)
-   
-  
-
-  
-    //add the animeCard to the container
+    infoElement.appendChild(ratedElement)
+  //add the animeCard to the container
     displayResultContainer.appendChild(animeElement)
-  
- }
+    displayResultContainer.appendChild(infoElement)
+}
 //fetching data from the api and create a list of them
  fetch("https://api.jikan.moe/v4/anime")
  .then((response) => response.json())
@@ -138,13 +138,20 @@ function displayAnimeResult(anime){
     
       const descriptionElement=document.createElement('p')
       descriptionElement.textContent=anime.synopsis
-      animeElement.appendChild(descriptionElement) 
+      animeElement.appendChild(descriptionElement)
+      
+      
+      const likeButton=document.createElement("button")
+      likeButton.textContent="Like"
+      likeButton.classList.add("likeButton")
+      animeElement.appendChild(likeButton)
+      likeButton.addEventListener("click",(e)=>{
+        e.preventDefault()
+        likeButton.style.backgroundColor="red"
+        likeButton.textContent="liked"
+      })
   
       cardContainer.appendChild(animeElement)
      //displayResult.appendChild(animeElement)
-  }
-
-
-
-   
+  }  
 })

@@ -50,21 +50,22 @@ a{
     border-radius: 20px;
     text-align: center
 }
-#displaySearchResult{
+#displaySearchResult {
     background-image: url(./image/AAAAAAAAAwallpaperflare.com_wallpaper.jpg);
     background-size: cover;
     margin: 10px;
     border-radius: 20px;
 }
 .animeCardResult{
+    display: flex;
+    gap: 20px;
     padding-right: 600px;
     padding-left: 20px;
     padding-bottom: 20px;
     padding-top: 20px;
 }
 #search{
-    margin: 10px;
-    padding: 10px;
+    padding: 1px;
     text-align: center;
 }
 #searchBtn{
@@ -75,6 +76,5 @@ a{
     border-radius: 20px;
     height: 30px;
     width: 500px;
-    
+    margin-top: 10px;
 }
-
