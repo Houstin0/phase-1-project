@@ -1,39 +1,47 @@
 body{
     background-color: black;
-   
-}
-h3{
-    text-align: center;
 }
 #header {
     display: flex;
-   background-color: gold; 
-   gap: 400px;
+   background-color:  royalblue; 
+   gap: 900px;
    padding: 10px;
+   border-radius: 20px;
 }
-.Search{
-    border: 1px solid blue;
+.logo{
+    font-size: larger;
+    font-weight: bolder;
+    color: black;
 }
-#showing{
+nav{
+    gap: 30px;
+    display: flex;
+    font-size: medium;
+    font-weight: bold;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+#listContainer{
     background-color: darkgrey;
     padding: 1px;
     margin-top: 20px;
-    border: 2px solid gold;
+    border: 2px solid royalblue;
     border-radius: 20px;
     display: flex;
     
 }
-#animeContainer{
-padding-right: 20px;
-}
 
-.animeCard{
-    margin: 10px;
-    padding: 10px;
-    width: 800px;
-}
 #animeList{
   list-style: none;
+  text-align: center;
+  cursor: pointer;
+}
+.animeCard{
+    margin-top: 10px;
+    padding: 10px;
+    width: 800px;
 }
 #animeList li {
     margin-top: 3px;
@@ -46,6 +54,7 @@ padding-right: 20px;
     background-image: url(./image/AAAAAAAAAwallpaperflare.com_wallpaper.jpg);
     background-size: cover;
     margin: 10px;
+    border-radius: 20px;
 }
 .animeCardResult{
     padding-right: 600px;
@@ -53,5 +62,19 @@ padding-right: 20px;
     padding-bottom: 20px;
     padding-top: 20px;
 }
-
+#search{
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+#searchBtn{
+    border-radius: 20px;
+    height: 30px;
+}
+#searchBar{
+    border-radius: 20px;
+    height: 30px;
+    width: 500px;
+    
+}
 

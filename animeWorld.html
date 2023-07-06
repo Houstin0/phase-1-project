@@ -7,45 +7,36 @@
     <link rel="stylesheet" href="animeworld.css">
 </head>
 <body>
+    <!---header contaning logo and navigation bar-->
     <div id="header">
         <div class="logo">
             <a href="#">Anime World</a>
         </div>
-        <!---<div class="Search">----->
-            <form>
+        <nav>
+            <a href="">Home</a>
+            <a href="#listContainer">Top Animes</a>
+            <a href="">About</a>
+        </nav> 
+    </div>
+    <!--div of form containig search bar-->
+    <div id="search">
+         <form>
                 <input type="text" id="searchBar">
                 <button id="searchBtn">Search</button>
             </form>
-         
-       <div class="navBar">
-        <nav>
-            <a href="">Home</a>
-            <a href="">Animes</a>
-            <a href="">Trending</a>
-            <a href="">About</a>
-
-        </nav> 
-       </div>
     </div>
-
+    <!--div containing container for displaying search results-->
     <div id="displaySearchResult">
         <img class="image" src="./image/10817.jpg" alt="image" width="100%">
         <div id="moreInfo"></div>
-    </div>
-    
-    
-    <div id="showing">
+    </div> 
+    <!--div of container to display top animes-->
+    <div id="listContainer">
      <div id="animeContainer"></div>
      <ul id="animeList">
-        <h3>Top 10</h3>
+        <h3>Top 25 Animes</h3>
      </ul>
     </div>
-
-
-    <div id="top"></div>
-    <div id="popular"></div>
-    <div id="trending"></div>
-    <div id="coming"></div>
     <script src="animeWorld.js"></script>
 </body>
 </html>
