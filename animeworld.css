@@ -87,13 +87,19 @@ a{
 }
 footer{
     background-color: royalblue;
+    border-radius: 20px;
+    padding: 10px;
 }
 #socials {
     padding-left: 30px;
+    gap: 10px;
 }
 #socials img{
     width: 20px;
 }
 footer{
     text-align: center;
+}
+#about{
+    color: white;
 }
