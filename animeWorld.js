@@ -184,4 +184,15 @@ function displayAnimeResult(anime){
       })
       cardContainer.appendChild(animeElement)
   }  
+
+  //add event listener to the submit button 
+  const submitButton=document.getElementById("submitBtn")
+  submitButton.addEventListener("submit",(e)=>{
+    e.preventDefault()
+    const favoriteAnimeInput=document.getElementById("favoriteAnime")
+    const favoriteAnime=favoriteAnimeInput.value;
+
+
+  })
+
 })
