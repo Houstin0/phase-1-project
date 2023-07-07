@@ -5,7 +5,6 @@ searchButton.addEventListener('click',(e)=>{
  e.preventDefault();
  const searchInput=document.getElementById("searchBar").value;
  fetchAnime(searchInput)
-
 })
 // function to search for inputed anime in the api and display the results
 function fetchAnime(searchValue) {
@@ -23,11 +22,11 @@ function fetchAnime(searchValue) {
       displayResultContainer.appendChild(animeElement)
      })
      }else{
-      console.log ("No results found");
+      alert ("No results found");
      }
   })
   .catch(error=>{
-      console.log("Error:",error);
+      console.log ("Error:",error);
   })
 }
 //function to display searched anime results
@@ -45,10 +44,9 @@ function displayAnimeResult(anime){
     const description=document.createElement('p')
     description.textContent=`Description: ${anime.synopsis}`
     animeElement.appendChild(description) 
-
+//add more info card elements
     const infoElement=document.createElement("div")
     infoElement.classList.add("infoCard")
-//add card elements
     const titleElement=document.createElement('h2')
     titleElement.textContent=anime.title_english
     infoElement.appendChild(titleElement)
@@ -113,7 +111,7 @@ function displayAnimeResult(anime){
 
 .catch((error) => {
     
-    console.error("Error:", error);
+    alert("Error:", error);
     
   });
 
@@ -121,11 +119,10 @@ function displayAnimeResult(anime){
  function displayCard(anime) {
     const cardContainer=document.getElementById("animeContainer")
     //add card elements
-    cardContainer.innerHTML=" "
-  
+    cardContainer.innerHTML=" "// clear previous html
       const animeElement=document.createElement("div")
       animeElement.classList.add("animeCard")
-    //add card elements
+    //add card elements and appending them
       const imageElement=document.createElement("img")
       imageElement.src=anime.images.jpg.image_url
       imageElement.alt="Anime pic"
@@ -179,19 +176,33 @@ function displayAnimeResult(anime){
       animeElement.appendChild(likeButton)
       likeButton.addEventListener("click",(e)=>{
         e.preventDefault()
-        likeButton.style.backgroundColor="red"
+        likeButton.style.backgroundColor="royalblue"
         likeButton.textContent="liked"
       })
       cardContainer.appendChild(animeElement)
   }  
-
   //add event listener to the submit button 
   const submitButton=document.getElementById("submitBtn")
   submitButton.addEventListener("click",(e)=>{
     e.preventDefault()
-    const favoriteAnimeInput=document.getElementById("favoriteAnime")
-    const favoriteAnime=favoriteAnimeInput.value;
-    console.log(favoriteAnime)
+    const commentInput=document.getElementById("comment")
+    const comments=commentInput.value;
+    postToDb(comments)
   })
- 
+  //function to post the inputed favorite anime
+  function postToDb(comment) {
+    fetch("https://animeworld-lgf0.onrender.com/Comment",{
+      method:"POST",
+      headers:{
+        "content-type": "application/json",
+      },body: JSON.stringify([comment])
+    })
+    .then((response)=>response.json())
+    .then((data)=>{
+      alert ("Data added successfully",data);
+    })
+    .catch(error=>{
+      alert ("Error: Favorite Anime not added",error);
+    })
+  }
 })

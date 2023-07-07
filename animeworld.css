@@ -3,7 +3,7 @@ body{
     padding: 10px;
 }
 #header {
-    display: flex;
+   display: flex;
    background-color:  royalblue; 
    gap: 900px;
    padding: 10px;
@@ -30,8 +30,7 @@ a{
     margin-top: 20px;
     border: 2px solid royalblue;
     border-radius: 20px;
-    display: flex;
-    
+    display: flex;  
 }
 
 #animeList{
@@ -103,5 +102,8 @@ footer{
     border-radius: 20px;
 }
 #about{
+    color: white;
+}
+h4{
     color: white;
 }
