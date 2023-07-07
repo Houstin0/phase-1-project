@@ -191,30 +191,7 @@ function displayAnimeResult(anime){
     e.preventDefault()
     const favoriteAnimeInput=document.getElementById("favoriteAnime")
     const favoriteAnime=favoriteAnimeInput.value;
-    
-    postToDb(favoriteAnime)
+    console.log(favoriteAnime)
   })
-  function postToDb(favoriteAnime) {
-    fetch("http://localhost:3000/favoriteAnimes")
-    .then((response)=>response.json())
-    .then((data)=>{
-      const dbData=data;
-      dbData.favoriteAnimes.push(favoriteAnime)
-      return fetch ("http://localhost:3000/favoriteAnimes",{
-        method: "PUT",
-        headers:{
-          "content-type": "application/json",
-        },
-        body:JSON.stringify(dbData),
-      })
-    })
-    .then((response)=>response.json())
-    .then ((data)=>{
-      alert(`Favorite anime recommended Response: ${JSON.stringify(data)}`)
-    })
-    .catch((error)=>{
-      console.log("Error:",error)
-      alert("An error occured while posting the favorite anime")
-    })
-  }
+ 
 })
