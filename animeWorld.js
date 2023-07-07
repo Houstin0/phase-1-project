@@ -108,13 +108,11 @@ function displayAnimeResult(anime){
     })
   })
   })
-
 .catch((error) => {
     
     alert("Error:", error);
     
   });
-
  //function to display anime cards in container with list
  function displayCard(anime) {
     const cardContainer=document.getElementById("animeContainer")
@@ -127,6 +125,10 @@ function displayAnimeResult(anime){
       imageElement.src=anime.images.jpg.image_url
       imageElement.alt="Anime pic"
       animeElement.appendChild(imageElement)
+     const trailerElment=document.createElement("img")
+     trailerElment.src=anime.trailer.embed_url
+     trailerElment.alt="trailer pic"
+     animeElement.appendChild(trailerElment)
       const titleElement=document.createElement('h2')
       titleElement.textContent=anime.title
       animeElement.appendChild(titleElement)
