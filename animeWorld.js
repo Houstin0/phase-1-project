@@ -61,11 +61,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const description = document.createElement("p");
     description.textContent = `Description: ${anime.synopsis}`;
     animeElement.appendChild(description);
+
+
     //add more info card elements
     const infoElement = document.createElement("div");
     infoElement.classList.add("infoCard");
     const titleElement = document.createElement("h2");
-    titleElement.textContent = anime.title_english;
+    titleElement.textContent = anime.title;
     infoElement.appendChild(titleElement);
     const statusElement = document.createElement("p");
     statusElement.textContent = `Status: ${anime.status}`;
@@ -229,7 +231,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function displayAnimeCards(anime) {
-    const displayAnime = document.getElementById("displayCardsContainer");
+    const displayAnimeContainer = document.getElementById("displayCardsContainer");
     const animeElement = document.createElement("div");
     animeElement.classList.add("displayAnimeCards");
 
@@ -241,7 +243,16 @@ document.addEventListener("DOMContentLoaded", () => {
     titleElement.textContent = anime.title;
     animeElement.appendChild(titleElement);
 
-    displayAnime.append(animeElement);
+    animeElement.addEventListener("click", () => {
+      // Handle click event for the anime card
+      const displayResultContainer = document.getElementById("displaySearchResult");
+      displayResultContainer.innerHTML = " "; // Clear previous html
+      // Populate displaySearchResult container with details of the clicked anime
+      const detailsElement = displayAnimeResult(anime);
+      displayResultContainer.appendChild(detailsElement);
+    });
+
+    displayAnimeContainer.append(animeElement);
   }
 
   fetch("https://api.jikan.moe/v4/anime")
@@ -254,7 +265,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch((error) => {
       console.log("Error:", error);
-    });
+  });
 
     
 });

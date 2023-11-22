@@ -57,6 +57,7 @@ a {
   margin: 10px;
   border-radius: 20px;
   color: white;
+
 }
 .animeCardResult {
   display: flex;
@@ -86,6 +87,9 @@ a {
   padding-left: 20px;
   padding-bottom: 20px;
   padding-top: 2px;
+}
+.infoCard h2{
+  color: royalblue;
 }
 footer {
   background-color: royalblue;
