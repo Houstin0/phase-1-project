@@ -1,109 +1,156 @@
-body{
-    background-color: black;
-    padding: 10px;
+body {
+  background-color: black;
+  padding: 10px;
 }
 #header {
-   display: flex;
-   background-color:  royalblue; 
-   gap: 900px;
-   padding: 10px;
-   border-radius: 20px;
+  display: flex;
+  background-color: royalblue;
+  gap: 900px;
+  padding: 10px;
+  border-radius: 20px;
 }
-.logo{
-    font-size: larger;
-    font-weight: bolder;
-    color: black;
+.logo {
+  font-size: larger;
+  font-weight: bolder;
+  color: black;
 }
-nav{
-    gap: 30px;
-    display: flex;
-    font-size: medium;
-    font-weight: bold;
+nav {
+  gap: 30px;
+  display: flex;
+  font-size: medium;
+  font-weight: bold;
 }
-a{
-    text-decoration: none;
-    color: black;
+a {
+  text-decoration: none;
+  color: black;
 }
-#listContainer{
-    background-color: darkgrey;
-    padding: 1px;
-    margin-top: 20px;
-    border: 2px solid royalblue;
-    border-radius: 20px;
-    display: flex;  
+#listContainer {
+  background-color: darkgrey;
+  padding: 1px;
+  margin-top: 20px;
+  border: 2px solid royalblue;
+  border-radius: 20px;
+  display: flex;
 }
 
-#animeList{
+#animeList {
   list-style: none;
   text-align: center;
   cursor: pointer;
 }
-.animeCard{
-    margin-top: 10px;
-    padding: 10px;
-    width: 800px;
+
+.animeCard {
+  margin-top: 10px;
+  padding: 10px;
+  width: 800px;
 }
 #animeList li {
-    margin-top: 3px;
-    padding: 3px;
-    border: 1px solid ;
-    border-radius: 20px;
-    text-align: center
+  margin-top: 3px;
+  padding: 3px;
+  border: 1px solid;
+  border-radius: 20px;
+  text-align: center;
 }
 #displaySearchResult {
-    background-image: url(./image/AAAAAAAAAwallpaperflare.com_wallpaper.jpg);
-    background-size: cover;
-    margin: 10px;
-    border-radius: 20px;
-    color: white;
+  background-image: url(./image/AAAAAAAAAwallpaperflare.com_wallpaper.jpg);
+  background-size: cover;
+  margin: 10px;
+  border-radius: 20px;
+  color: white;
 }
-.animeCardResult{
-    display: flex;
-    gap: 20px;
-    padding-right: 600px;
-    padding-left: 20px;
-    padding-bottom: 20px;
-    padding-top: 20px;
+.animeCardResult {
+  display: flex;
+  gap: 20px;
+  padding-right: 600px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
-#search{
-    padding: 1px;
-    text-align: center;
+#search {
+  padding: 1px;
+  text-align: center;
 }
-#searchBtn{
-    border-radius: 20px;
-    height: 30px;
+#searchBtn {
+  border-radius: 20px;
+  height: 30px;
 }
-#searchBar{
-    border-radius: 20px;
-    height: 30px;
-    width: 500px;
-    margin-top: 10px;
+#searchBar {
+  border-radius: 20px;
+  height: 30px;
+  width: 500px;
+  margin-top: 10px;
+  text-align: center;
 }
-.infoCard{
-    padding-right: 600px;
-    padding-left: 20px;
-    padding-bottom: 20px;
-    padding-top: 2px;
+.infoCard {
+  padding-right: 600px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-top: 2px;
 }
-footer{
-    background-color: royalblue;
-    border-radius: 20px;
-    padding: 10px;
+footer {
+  background-color: royalblue;
+  border-radius: 20px;
+  padding: 10px;
 }
 #socials {
-    padding-left: 30px;
-    gap: 10px;
+  padding-left: 30px;
+  gap: 10px;
 }
-#socials img{
-    width: 20px;
+#socials img {
+  width: 20px;
 }
-footer{
-    text-align: center;
-    border-radius: 20px;
+footer {
+  text-align: center;
+  border-radius: 20px;
 }
-#about{
-    color: white;
+#about {
+  color: white;
 }
-h4{
-    color: white;
+#form h3 {
+  color: white;
+}
+#displayCardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 2200px; /* Set a fixed maximum width as needed */
+  margin: 0 auto; /* Center the container */
+  margin-top: 20px;
+}
+
+.displayAnimeCards {
+  background-color: royalblue;
+  border-radius: 10px;
+  padding: 10px;
+  max-width: fit-content; /* Set a fixed maximum width for each card */
+  margin: 0 auto; /* Center the container */
+}
+.displayAnimeCards img {
+  height: 250px; /* Adjust the height as needed */
+  width: auto; /* Maintain aspect ratio */
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.displayAnimeCards h4 {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  max-height: 3em; /* Set a maximum height for two rows */
+  max-width: 150px;
+  overflow: hidden;
+  margin: 0; /* Remove default margin to ensure proper alignment */
+  line-height: 1.5; /* Adjust line height as needed */
+}
+
+
+/* Adjustments for smaller screens or mobile devices */
+@media (max-width: 600px) {
+  .displayAnimeCards {
+    max-width: 100%; /* Full width for small screens */
+    justify-content: center; /* Center cards for small screens */
+  }
+
+  .animeCardResult {
+    width: 100%; /* Full width for small screens */
+  }
 }

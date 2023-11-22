@@ -1,70 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anime World</title>
-    <link rel="stylesheet" href="animeworld.css">
-</head>
-<body>
+    <link rel="stylesheet" href="animeworld.css" />
+  </head>
+  <body>
     <div id="header">
-        <div class="logo">
-            <a href="#">Anime World</a>
-        </div>
-        <nav>
-            <a href="">Home</a>
-            <a href="#listContainer">Top Animes</a>
-            <a href="#about">About</a>
-        </nav> 
+      <div class="logo">
+        <a href="#">Anime World</a>
+      </div>
+      <nav>
+        <a href="">Home</a>
+        <a href="#listContainer">Top Animes</a>
+        <a href="#about">About</a>
+      </nav>
     </div>
     <div id="search">
-         <form>
-                <input type="text" id="searchBar" placeholder="Search anime...">
-                <button id="searchBtn">Search</button>
-            </form>
+      <form>
+        <input type="text" id="searchBar" placeholder="Search anime..." />
+        <button id="searchBtn">Search</button>
+      </form>
     </div>
     <div id="displaySearchResult">
-        <img class="image" src="./image/10817.jpg" alt="image" width="100%">
-        <div id="moreInfo"></div>
-    </div> 
+      <div id="moreInfo"></div>
+    </div>
+
+    <div id="displayCardsContainer"></div>
+
     <div id="listContainer">
-     <div id="animeContainer"></div>
-     <ul id="animeList">
+      <div id="animeContainer"></div>
+      <ul id="animeList">
         <h3>Top 25 Animes</h3>
-     </ul>
+      </ul>
     </div>
     <div id="form">
-        <h4>Add Comment</h4>
-        <input type="text" id="comment" placeholder="Comment on information">
-        <button id="submitBtn">Add</button>
+      <h3>Add Comment</h3>
+      <input type="text" id="comment" placeholder="Comment on information" />
+      <button id="submitBtn">Add</button>
     </div>
-    <script src="animeWorld.js"></script>
+
     <div id="about">
-        <h3>ABOUT</h3>
-     <p>Welcome to Anime World, your ultimate destination for everything related to anime and manga!</p>
-        <P>Immerse yourself in the fascinating world of Japanese animation.
-        our mission is to provide anime lovers with a platform to access a variety of anime and manga information.</P>
-        <p>Experience the thrill of Anime World today and embark on a journey through captivating stories,
-            stunning animation, and unforgettable characters. Start exploring now!
-        </p>
+      <h3>ABOUT</h3>
+      <p>
+        Welcome to Anime World, your ultimate destination for everything related
+        to anime and manga!
+      </p>
+      <p>
+        Immerse yourself in the fascinating world of Japanese animation. our
+        mission is to provide anime lovers with a platform to access a variety
+        of anime and manga information.
+      </p>
+      <p>
+        Experience the thrill of Anime World today and embark on a journey
+        through captivating stories, stunning animation, and unforgettable
+        characters. Start exploring now!
+      </p>
     </div>
     <footer>
-        <div id="socials">
-            <h3>Contact us</h3>
-            <a href="https://www.google.com/">
-               <img src="icons/google.svg" alt="Google"> 
-            </a>
-            <a href="https://www.instagram.com/">
-                <img src="icons/instagram.svg" alt="Instagram">
-            </a>
-            <a href="https://twitter.com/i/flow/login">
-                <img src="icons/twitter.svg" alt="Twitter">
-            </a>
-            <a href="https://www.facebook.com/">
-                <img src="icons/facebook.svg" alt="Facebook">
-            </a>
-        </div>
-        <p>&copy:2023 Anime World. All rights reserved.</p>
+      <div id="socials">
+        <h3>Contact us</h3>
+        <a href="https://www.google.com/">
+          <img src="icons/google.svg" alt="Google" />
+        </a>
+        <a href="https://www.instagram.com/">
+          <img src="icons/instagram.svg" alt="Instagram" />
+        </a>
+        <a href="https://twitter.com/i/flow/login">
+          <img src="icons/twitter.svg" alt="Twitter" />
+        </a>
+        <a href="https://www.facebook.com/">
+          <img src="icons/facebook.svg" alt="Facebook" />
+        </a>
+      </div>
+      <p>&copy:2023 Anime World. All rights reserved.</p>
     </footer>
-</body>
+    <script src="animeWorld.js"></script>
+  </body>
 </html>
