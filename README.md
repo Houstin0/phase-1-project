@@ -22,9 +22,9 @@ Contact Us: In the footer, you'll find social media icons for Google, Instagram,
 ## API documentation
 Anime World uses the Jikan API to fetch anime and manga information.
 ## How to run the web application:
-You can access the project by following the link https://houstin0.github.io/phase-1-project/ in your web browser.when the application loads you will see a search bar where you can input the name of the desired anime and the results will be displayed below it.There is also top 25 anime list which can be accessed by pressing the top animes in the navigation bar and can also be found within the page.
+You can access the project by following the link https://houstin0.github.io/project-anime-world/ in your web browser.when the application loads you will see a search bar where you can input the name of the desired anime and the results will be displayed below it.There is also top 25 anime list which can be accessed by pressing the top animes in the navigation bar and can also be found within the page.
 ## Project Setup:
-1. You can access the app either by following the link https://houstin0.github.io/phase-1-project/ in your web browser.
+1. You can access the app either by following the link https://houstin0.github.io/project-anime-world/ in your web browser.
 2. You can Clone the repository to your local machine, open the animeWorld.html file in your preferred code editor.Run the index.html file using live server which will open the page on your default browser and Interact with the interface as desired.
 ## Author:
 This is authored by Houstin angwenyi
