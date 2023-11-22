@@ -8,6 +8,7 @@ body {
   gap: 900px;
   padding: 10px;
   border-radius: 20px;
+  position: fixed;
 }
 .logo {
   font-size: larger;
@@ -19,6 +20,7 @@ nav {
   display: flex;
   font-size: medium;
   font-weight: bold;
+  margin-right: 20px;
 }
 a {
   text-decoration: none;
@@ -70,6 +72,7 @@ a {
 #search {
   padding: 1px;
   text-align: center;
+  margin-top: 4%;
 }
 #searchBtn {
   border-radius: 20px;
