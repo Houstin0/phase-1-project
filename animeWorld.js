@@ -118,6 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Initial Load
+
   fetchTopAnimes(currentPage);
 });
