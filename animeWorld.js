@@ -73,50 +73,50 @@ document.addEventListener("DOMContentLoaded", () => {
             <img src="${anime.images.jpg.image_url}" alt="${anime.title}">
             <div class="modal-text">
               <p>${anime.synopsis}</p>
-
             </div>
           </div>
-                        <p>Status: ${anime.status}</p>
-              <p>Episodes: ${anime.episodes}</p>
-              <p>Rating: ${anime.score}</p>
+          <p>Status: ${anime.status}</p>
+          <p>Episodes: ${anime.episodes}</p>
+          <p>Rating: ${anime.score}</p>
         `;
-        fetchComments(animeId);
-        modal.style.display = "block";
+        modal.classList.add("show");  // Show the modal
       })
       .catch((error) => {
         console.error("Error:", error);
       });
   }
   
+  
 
   function closeModal() {
-    modal.style.display = "none";
+    modal.classList.remove("show");  // Hide the modal
     currentAnimeId = null;
   }
-
+  
   closeModalButton.addEventListener("click", closeModal);
-
+  
   window.addEventListener("click", (event) => {
     if (event.target == modal) {
       closeModal();
     }
   });
+  
 
-  function fetchComments(animeId) {
-    const comments = JSON.parse(localStorage.getItem(`anime-${animeId}-comments`)) || [];
-    commentsList.innerHTML = comments.map(comment => `<p>${comment}</p>`).join('');
-  }
+  // function fetchComments(animeId) {
+  //   const comments = JSON.parse(localStorage.getItem(`anime-${animeId}-comments`)) || [];
+  //   commentsList.innerHTML = comments.map(comment => `<p>${comment}</p>`).join('');
+  // }
 
-  document.getElementById("submitCommentBtn").addEventListener("click", () => {
-    const commentInput = document.getElementById("commentInput").value;
-    if (commentInput && currentAnimeId) {
-      let comments = JSON.parse(localStorage.getItem(`anime-${currentAnimeId}-comments`)) || [];
-      comments.push(commentInput);
-      localStorage.setItem(`anime-${currentAnimeId}-comments`, JSON.stringify(comments));
-      fetchComments(currentAnimeId);
-      document.getElementById("commentInput").value = '';
-    }
-  });
+  // document.getElementById("submitCommentBtn").addEventListener("click", () => {
+  //   const commentInput = document.getElementById("commentInput").value;
+  //   if (commentInput && currentAnimeId) {
+  //     let comments = JSON.parse(localStorage.getItem(`anime-${currentAnimeId}-comments`)) || [];
+  //     comments.push(commentInput);
+  //     localStorage.setItem(`anime-${currentAnimeId}-comments`, JSON.stringify(comments));
+  //     fetchComments(currentAnimeId);
+  //     document.getElementById("commentInput").value = '';
+  //   }
+  // });
 
 
   fetchTopAnimes(currentPage);
