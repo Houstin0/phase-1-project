@@ -9,72 +9,63 @@
   <body>
     <div id="header">
       <div class="logo">
-        <a href="">Anime World</a>
+        <a href="#">Anime World</a>
       </div>
       <nav>
-        <a href="">Home</a>
+        <a href="/">Home</a>
         <a href="#listContainer">Top Animes</a>
         <a href="#about">About</a>
       </nav>
     </div>
+
     <div id="search">
-      <form>
+      <form id="searchForm">
         <input type="text" id="searchBar" placeholder="Search anime..." />
         <button id="searchBtn">Search</button>
       </form>
     </div>
-    <div id="displaySearchResult">
-      <div id="moreInfo"></div>
-    </div>
 
-    <div id="displayCardsContainer"></div>
+   
 
     <div id="listContainer">
-      <div id="animeContainer"></div>
-      <ul id="animeList">
-        <h3>Top 25 Animes</h3>
-      </ul>
+     
+      <div id="animeGrid"></div>
+      <!-- Anime grid container -->
+      <button id="loadMoreBtn">Load More</button>
     </div>
-    <div id="form">
-      <h3>Add Comment</h3>
-      <input type="text" id="comment" placeholder="Comment on information" />
-      <button id="submitBtn">Add</button>
+
+    <!-- Popup Modal -->
+    <div id="animeModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modalDetails"></div>
+        <!-- Anime details will be injected here -->
+        <!-- <div id="commentsSection">
+          <h4>Comments</h4>
+          <div id="commentsList"></div>
+          <input type="text" id="commentInput" placeholder="Add a comment" />
+          <button id="submitCommentBtn">Add Comment</button>
+        </div> -->
+      </div>
+
     </div>
 
     <div id="about">
       <h3>ABOUT</h3>
-      <p>
-        Welcome to Anime World, your ultimate destination for everything related
-        to anime and manga!
-      </p>
-      <p>
-        Immerse yourself in the fascinating world of Japanese animation. our
-        mission is to provide anime lovers with a platform to access a variety
-        of anime and manga information.
-      </p>
-      <p>
-        Experience the thrill of Anime World today and embark on a journey
-        through captivating stories, stunning animation, and unforgettable
-        characters. Start exploring now!
-      </p>
+      <p>Welcome to Anime World, your ultimate destination for everything related to anime and manga!</p>
+      <p>Immerse yourself in the fascinating world of Japanese animation. Our mission is to provide anime lovers with a platform to access a variety of anime and manga information.</p>
+      <p>Experience the thrill of Anime World today and embark on a journey through captivating stories, stunning animation, and unforgettable characters. Start exploring now!</p>
     </div>
+
     <footer>
       <div id="socials">
         <h3>Contact us</h3>
-        <a href="https://www.google.com/">
-          <img src="icons/google.svg" alt="Google" />
-        </a>
-        <a href="https://www.instagram.com/">
-          <img src="icons/instagram.svg" alt="Instagram" />
-        </a>
-        <a href="https://twitter.com/i/flow/login">
-          <img src="icons/twitter.svg" alt="Twitter" />
-        </a>
-        <a href="https://www.facebook.com/">
-          <img src="icons/facebook.svg" alt="Facebook" />
-        </a>
+        <a href="https://www.google.com/"><img src="icons/google.svg" alt="Google" /></a>
+        <a href="https://www.instagram.com/"><img src="icons/instagram.svg" alt="Instagram" /></a>
+        <a href="https://twitter.com/i/flow/login"><img src="icons/twitter.svg" alt="Twitter" /></a>
+        <a href="https://www.facebook.com/"><img src="icons/facebook.svg" alt="Facebook" /></a>
       </div>
-      <p>&copy:2023 Anime World. All rights reserved.</p>
+      <p>&copy; 2023 Anime World. All rights reserved.</p>
     </footer>
     <script src="animeWorld.js"></script>
   </body>
